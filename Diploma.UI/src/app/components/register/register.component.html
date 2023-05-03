@@ -1,0 +1,34 @@
+<style>        
+    .registration-div {
+        height: 70vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+</style>
+
+<div class="registration-div">
+    <div class="form-group">
+        <label for="firstNameInput" class="form-label">Fist name</label>
+        <input id="firstNameInput" class="form-control" [formControl]="firstNameControl">
+    </div>
+    <div class="form-group">
+        <label for="lastNameInput" class="form-label">Last name</label>
+        <input id="lastNameInput" class="form-control" [formControl]="lastNameControl">
+    </div>
+    <div class="form-group">  
+        <label for="emailInput" class="form-label">Email</label>
+        <input id="emailInput" class="form-control" [formControl]="emailControl">
+    </div>
+    <div class="form-group">
+        <label for="passwordInput" class="form-label">Password</label>
+        <input id="passwordInput" class="form-control" [formControl]="passwordControl">
+    </div>
+    <div class="form-group">
+        <label for="passwordConfirmInput" class="form-label">Confirm password</label>
+        <input id="passwordConfirmInput" class="form-control" [formControl]="passwordConfirmControl">
+    </div>
+    <button type="button" class="btn btn-primary mt-3" (click)="signUp()">Log in</button>
+</div>

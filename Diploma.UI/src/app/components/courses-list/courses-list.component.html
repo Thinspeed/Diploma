@@ -1,0 +1,39 @@
+<div class="container mt-5">
+    <div class="d-flex flex-row-reverse" *ngIf="role == 'Teacher'">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Add
+        </button>
+    </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Creating course</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <label for="nameInput" class="form-label">Course name</label>
+                    <input id="nameInput" class="form-control" [formControl]="nameControl">
+                    <label for="descriptionInput" class="form-label">Course name</label>
+                    <textarea id="descriptionInput" class="form-control" [formControl]="descriptionControl" placeholder="What's up?" required></textarea>
+                    <input type="file" accept="image/*" (change)="getFile($event)"/>
+                </div>
+                <div class="modal-footer">
+                    <button #closeModal type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" (click)="addCourse()">Create</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="d-flex flex-row mt-2">
+        <div class="card me-3" style="width: 18rem;" *ngFor="let c of courses">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{c.name}}</h5>
+                <a class="btn btn-primary" href="/course/{{c.id}}">start</a>
+            </div>
+        </div>
+    </div>
+</div>
